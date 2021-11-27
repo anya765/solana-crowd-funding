@@ -1,23 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useEffect, useState } from 'react';
+import Title from './components/Title';
+import Header from './components/Header';
+import Card from './components/Card';
+import Form from './components/Form';
+import { getAllCampaigns } from "./solana";
+const App = () => {
+  const [route, setRoute] = useState(0);
+  const [cards, setCards] = useState([]);
+  const text = 'Tommy Vercetti \n Carl Johnson'
+  // useEffect(() => {
+  //   getAllCampaigns().then((val) => {
+  //     setCards(val);
+  //     console.log(val);
+  //   });
+  // }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+    <div className="ui container">
+      <div style={{display: 'flex',  justifyContent:'left', alignItems:'left', height: '10vh', paddingTop: '2vh'}}>
+        <h1> Crowfunding App - Make your favourite projects happen  </h1> </div>
+      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '5vh'}}>
+        <h3>This is a crowdfuding app built on Solana. It's kind of like Kickstarter but decentralized and much cooler. Fund your favourite campaigns or create your own using the menu below. </h3>
+      </div>
+
+      <div style={{display: 'flex',  justifyContent:'left', alignItems:'left', height: '7vh', paddingTop: '2vh'}}>
+        <p>Make sure to connect to the Solana Devnet and get some SOL from <a href="https://solfaucet.com/" target = "_blank"> this </a> faucet to start using this app. </p>
+      </div>
+      <Header setRoute={setRoute} />
+      {route === 0 ?
+        <div>{
+          cards.map((e, idx) => (
+            <Card
+              key={e.pubId.toString()}
+              data={{
+                title: e.name,
+                description: e.description,
+                amount: (e.amount_donated).toString(),
+                image: e.image_link,
+                id: e.pubId,
+              }}
+              setCards={setCards} />
+          ))
+        }
+        </div>
+        :
+        <Form setRoute={(e) => {
+          setRoute(e);
+          // // getAllCampaigns().then((val) => {
+          // //   setCards(val);
+          // });
+        }} />
+      }
     </div>
   );
 }
