@@ -17,7 +17,7 @@ const App = () => {
      
     <div className="ui container">
       <div style={{display: 'flex',  justifyContent:'left', alignItems:'left', height: '10vh', paddingTop: '2vh'}}>
-        <h1> Crowfunding App - Make creative projects a reality 🚀  </h1> </div>
+        <h1> Crowfunding App - Make creative projects a reality <span role="img" aria-label="sheep">🚀</span>  </h1> </div>
       <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '5vh'}}>
         <h3>This is a crowdfuding app built on Solana. It's like Kickstarter but decentralized (and cooler). Fund your favourite campaigns or create your own using the navigation bar below. </h3>
       </div>
