@@ -60,7 +60,7 @@ const Card = ({ data, setCards }) => {
                                     </div>
                                 </div>
                                 <div className="column">
-                                    <button className="ui button" type="submit" onClick={(e) => onWithdraw(e)} >Withdraw</button>
+                                    <button className="ui button" type="submit" onClick={(e) => onWithdraw(e)} style = {{paddingLeft: 15, width: 90}}>Withdraw</button>
                                 </div>
                             </div>
                         </div>
