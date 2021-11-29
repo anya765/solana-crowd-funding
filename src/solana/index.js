@@ -12,7 +12,7 @@ const cluster = "https://api.devnet.solana.com";
 const connection = new Connection(cluster, "confirmed");
 const wallet = new Wallet("https://www.sollet.io", cluster);
 const programId= new PublicKey(
-	"2eXcSDFNzMGhQra2hXiXqyjqq8QH1iuynjaWM4c4oA3M"
+	"EVuTd9pNVBzpSNmi3RrTunBypHXNdvWZJs1eq5JUv4ND"
 );
 
 export async function setPayerAndBlockhashTransaction(instructions) {
