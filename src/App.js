@@ -27,7 +27,7 @@ const App = () => {
       </div>
       <Header setRoute={setRoute} />
       {route === 0 ?
-        <div style ={{columns:'2 auto'}}>{
+        <div style ={{columns:'1 auto'}}>{
           cards.map((e, idx) => (
             <Card
               key={e.pubId.toString()}
