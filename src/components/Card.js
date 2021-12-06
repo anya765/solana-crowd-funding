@@ -25,7 +25,7 @@ const Card = ({ data, setCards }) => {
     return (
         <div>
             <div className="ui card fluid">
-                <div className="image">
+                <div className="image"  style = {{width:'100%', height: '50%', objectFit: 'cover'}}>
                     <img src={data.image} />
                 </div>
                 <div className="content">
